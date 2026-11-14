@@ -13,6 +13,12 @@
       <stop offset="1" stop-color="#c7d2fe"/>
       <animateTransform attributeName="gradientTransform" type="translate" values="0 0;1000 0" dur="6s" repeatCount="indefinite"/>
     </linearGradient>
+    <linearGradient id="ink-still" x1="0" y1="0" x2="1000" y2="0" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#e0e7ff"/>
+      <stop offset="0.35" stop-color="#f0abfc"/>
+      <stop offset="0.65" stop-color="#fbcfe8"/>
+      <stop offset="1" stop-color="#c7d2fe"/>
+    </linearGradient>
     <radialGradient id="glow-indigo"><stop offset="0" stop-color="#6366f1"/><stop offset="0.4" stop-color="#6366f1" stop-opacity="0.85"/><stop offset="0.7" stop-color="#6366f1" stop-opacity="0.35"/><stop offset="1" stop-color="#6366f1" stop-opacity="0"/></radialGradient>
     <radialGradient id="glow-pink"><stop offset="0" stop-color="#ec4899"/><stop offset="0.4" stop-color="#ec4899" stop-opacity="0.85"/><stop offset="0.7" stop-color="#ec4899" stop-opacity="0.35"/><stop offset="1" stop-color="#ec4899" stop-opacity="0"/></radialGradient>
     <radialGradient id="glow-violet"><stop offset="0" stop-color="#8b5cf6"/><stop offset="0.4" stop-color="#8b5cf6" stop-opacity="0.85"/><stop offset="0.7" stop-color="#8b5cf6" stop-opacity="0.35"/><stop offset="1" stop-color="#8b5cf6" stop-opacity="0"/></radialGradient>
@@ -31,20 +37,20 @@
     @keyframes tw { 0%, 100% { opacity: .15; transform: scale(.6); } 50% { opacity: 1; transform: scale(1.1); } }
     .caret { animation: blink 1s steps(1, end) infinite; }
     @keyframes blink { 0% { fill-opacity: 1; } 50% { fill-opacity: 0; } }
-    @media (prefers-reduced-motion: reduce) { .rise, .tw, .caret { animation: none; } }
+    .drift1 { animation: drift1 14s linear infinite; } @keyframes drift1 { 50% { transform: translate(140px, 60px); } }
+    .drift2 { animation: drift2 16s linear infinite; } @keyframes drift2 { 50% { transform: translate(-160px, -50px); } }
+    .drift3 { animation: drift3 12s linear infinite; } @keyframes drift3 { 50% { transform: translate(-80px, 90px); } }
+    @media (prefers-reduced-motion: reduce) {
+      .rise, .tw, .caret, .drift1, .drift2, .drift3 { animation: none; }
+      .title { fill: url(#ink-still); }
+    }
   </style>
   <g clip-path="url(#card)">
     <rect width="1000" height="240" fill="url(#bg)"/>
     <g opacity="0.6">
-      <circle cx="200" cy="60" r="220" fill="url(#glow-indigo)">
-        <animateTransform attributeName="transform" type="translate" values="0 0;140 60;0 0" dur="14s" repeatCount="indefinite"/>
-      </circle>
-      <circle cx="780" cy="200" r="230" fill="url(#glow-pink)">
-        <animateTransform attributeName="transform" type="translate" values="0 0;-160 -50;0 0" dur="16s" repeatCount="indefinite"/>
-      </circle>
-      <circle cx="520" cy="20" r="200" fill="url(#glow-violet)">
-        <animateTransform attributeName="transform" type="translate" values="0 0;-80 90;0 0" dur="12s" repeatCount="indefinite"/>
-      </circle>
+      <circle cx="200" cy="60" r="220" fill="url(#glow-indigo)" class="drift1"/>
+      <circle cx="780" cy="200" r="230" fill="url(#glow-pink)" class="drift2"/>
+      <circle cx="520" cy="20" r="200" fill="url(#glow-violet)" class="drift3"/>
     </g>
     <g fill="#ffffff">
       <use href="#star" class="tw" x="120" y="60"/>
