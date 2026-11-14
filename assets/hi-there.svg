@@ -29,7 +29,9 @@
     .tw { animation: tw 3s ease-in-out infinite; transform-box: fill-box; transform-origin: center; }
     .tw.d1 { animation-delay: .8s; } .tw.d2 { animation-delay: 1.6s; } .tw.d3 { animation-delay: 2.2s; }
     @keyframes tw { 0%, 100% { opacity: .15; transform: scale(.6); } 50% { opacity: 1; transform: scale(1.1); } }
-    @media (prefers-reduced-motion: reduce) { .rise, .tw { animation: none; } }
+    .caret { animation: blink 1s steps(1, end) infinite; }
+    @keyframes blink { 0% { fill-opacity: 1; } 50% { fill-opacity: 0; } }
+    @media (prefers-reduced-motion: reduce) { .rise, .tw, .caret { animation: none; } }
   </style>
   <g clip-path="url(#card)">
     <rect width="1000" height="240" fill="url(#bg)"/>
@@ -51,8 +53,8 @@
       <use href="#star" class="tw d3" x="170" y="185"/>
     </g>
     <g class="rise">
-      <text class="title" x="455" y="152" text-anchor="middle" fill="url(#ink)" filter="url(#glow)">Hi there</text>
-      <text class="hand" x="690" y="150" text-anchor="middle">👋</text>
+      <!-- One line, centred as a whole whatever font the viewer has: text, wave, then the caret -->
+      <text class="title" x="500" y="152" text-anchor="middle" fill="url(#ink)" filter="url(#glow)">Hi there<tspan class="hand" dx="18" dy="-2">👋</tspan><tspan class="caret" dx="6" dy="2">|</tspan></text>
     </g>
   </g>
 </svg>
