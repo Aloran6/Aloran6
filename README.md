@@ -3,10 +3,8 @@
 
 <div align="center">
 
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="./assets/marquee-dark.svg" />
-  <img alt="Python, Docker, AWS, MongoDB, iOS, Linux" src="./assets/marquee-light.svg" />
-</picture>
+<!-- Icon strip: dark in both GitHub themes, like the banner (assets/marquee.svg) -->
+<img alt="Python, Docker, AWS, MongoDB, iOS, Linux" src="./assets/marquee.svg" />
 
 <!-- Slot machine, hidden for now: delete this comment's first and last lines to bring it back.
 ### Feeling lucky?
@@ -23,5 +21,5 @@
 
 </div>
 
-<!-- Footer: animated wave -->
-<img width="100%" alt="" src="https://capsule-render.vercel.app/api?type=waving&height=120&section=footer&color=0:6366f1,50:8b5cf6,100:ec4899" />
+<!-- Footer: animated wave in the banner's dark aurora tones (assets/wave.svg) -->
+<img width="100%" alt="" src="./assets/wave.svg" />
