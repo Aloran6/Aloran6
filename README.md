@@ -1,5 +1,5 @@
-<!-- Header: pixel-art banner. Other looks to swap in: assets/banner-arcade.svg, assets/banner-sunny.svg -->
-<img width="100%" alt="Hi there 👋" src="./assets/banner-terminal.svg" />
+<!-- Header: animated aurora card (assets/hi-there.svg) -->
+<img width="100%" alt="Hi there 👋" src="./assets/hi-there.svg" />
 
 <div align="center">
 
