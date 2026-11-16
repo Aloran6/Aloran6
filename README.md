@@ -3,6 +3,11 @@
   <img alt="Hi there 👋" src="./assets/hi-light.svg" />
 </picture>
 
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="./assets/tools-dark.svg" />
+  <img alt="Python, Docker, AWS, MongoDB, iOS, Linux" src="./assets/tools-light.svg" />
+</picture>
+
 <!-- Slot machine, hidden for now: delete this comment's first and last lines to bring it back.
 ### Feeling lucky?
 
